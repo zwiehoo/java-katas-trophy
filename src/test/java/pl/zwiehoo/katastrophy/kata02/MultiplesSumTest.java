@@ -1,17 +1,15 @@
 package pl.zwiehoo.katastrophy.kata02;
 
 import org.junit.Test;
-import org.mockito.Mockito;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class MultiplesSumTest {
 
     public static final int EXPECTED_SUM = 266333;
 
     private MultiplesSum createMultiplesSum() {
-        // Return your implementation of kata solution
-        return Mockito.mock(MultiplesSum.class);
+        return new SimpleMultiplesSum();
     }
 
     @Test
