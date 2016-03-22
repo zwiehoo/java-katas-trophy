@@ -3,6 +3,7 @@ package pl.zwiehoo.katastrophy.kata01;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -15,12 +16,10 @@ public class PhraseSplitterTest {
 
     private static final String SINGLE_WORD = "word";
     private static final String COMPLEX_PHRASE = "The best preparation for tomorrow is doing your best today";
-    private static final int MAX_WORDS_IN_PHRASE = 3;
     private static final String PHRASE_OF_UNKNOWN_WORDS = "all unknown words";
 
     private PhraseSplitter createPhraseSplitter(Set<String> knownPhrases) {
-        SetPhraseDictionary dictionary = new SetPhraseDictionary(knownPhrases);
-        return new DictionaryPhraseSplitter(dictionary, MAX_WORDS_IN_PHRASE);
+        return Mockito.mock(PhraseSplitter.class);
     }
 
     @Test
